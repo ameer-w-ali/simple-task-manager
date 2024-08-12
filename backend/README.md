@@ -33,7 +33,8 @@ This is a simple task manager built using Node.js, Express, and MongoDB. It allo
 - `GET /api/tasks/`: Get all tasks
 - `GET /api/tasks/:id`: Get a task by ID
 - `PUT /api/tasks/:id`: Update a task by ID
-- `PATCH /api/tasks/:id/status/:status`: Update the status of a task by ID
+- `PATCH /api/tasks/:id/`: Update the status of a task by ID (i.e. complete, incomplete)
+- `PATCH /api/tasks/:id/priority`: Update the priority of a task by ID (i.e. high, medium, low, none)
 - `DELETE /api/tasks/:id`: Delete a task by ID
 
 ## Responses
@@ -54,10 +55,14 @@ const taskSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  status: {
+  status:{
+    type: Boolean,
+    default: false,
+  },
+  priority: {
     type: String,
-    default: "pending",
-	  enum: ["pending", "in-progress", "completed"],
+    default: "none",
+	  enum: ["high", "medium", "low","none"],
   },
   dueDate:{
     type: Date,

@@ -16,10 +16,9 @@ This is a simple task manager built using React, Redux, Express, and MongoDB. It
 ```sh
 git clone https://github.com/ameerwajidali/simple-task-manager.git
 ```
-
 - change directory to `backend`
-
 - Install dependencies using `npm install`
+- checkout backend readme for more details [README](https://github.com/ameer-w-ali/simple-task-manager/blob/main/backend/README.md)
 
 - Create a `.env` file in the root directory of backend and add the following variables:
    - `PORT`: The port number to run the server on (default: 3000)

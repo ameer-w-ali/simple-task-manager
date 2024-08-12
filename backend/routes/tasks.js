@@ -20,7 +20,7 @@ router.get("/:id", getTask);
 
 router.put("/:id", validateUpdateTask, updateTask);
 
-router.patch("/:id/", updateStatus);
+router.patch("/:id", updateStatus);
 
 router.patch("/:id/:priority", updatePriority);
 
