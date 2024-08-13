@@ -20,12 +20,12 @@ git clone https://github.com/ameerwajidali/simple-task-manager.git
 ### Backend
 - change directory to `backend`
 - Install dependencies using `npm install`
-- Checkout the backend README for more details [Backed Readme](/backend/README.md)
 - Create a `.env` file in the root directory of backend and add the following variables:
    - `PORT`: The port number to run the server on (default: 3000)
    - `MONGODB_URI`: The MongoDB connection URI
 - Run the backend server using `npm run dev`.
 - The backend server will be available at `http://localhost:3000/`
+- Checkout the backend README for more details [Backed Readme](/backend/README.md)
 
 ### Frontend
 - change directory to `frontend`
