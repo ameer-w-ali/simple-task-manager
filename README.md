@@ -34,4 +34,4 @@ git clone https://github.com/ameerwajidali/simple-task-manager.git
 - The frontend application will be available at `http://localhost:5173/`
 - Check the frontend README for more details [Frontend Readme](/frontend/README.md)
 
-> Note: Make sure to have the backend server running before running the frontend application. and also make sure to have a `.env` file in the root directory of backend.
+### **Note: Make sure to have the backend server running before running the frontend application. and also make sure to have a `.env` file in the root directory of backend.**
