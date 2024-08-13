@@ -8,9 +8,11 @@ import {
 } from "../features/tasks/taskSlice";
 import UpdateTaskModel from "./UpdateTaskModel";
 import Priority from "./Priority";
+import TaskModel from "./TaskModel";
 
 export default function Task({ _id, title, dueDate, priority, status }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [taskIsOpen, setTaskIsOpen] = useState(false);
   const dispatch = useDispatch();
 
   const handleEdit = () => {
@@ -26,6 +28,11 @@ export default function Task({ _id, title, dueDate, priority, status }) {
     dispatch(updateTaskStatus(_id));
   };
 
+  const handleTitleClick = async () => {
+    await dispatch(getTask(_id));
+    setTaskIsOpen(true);
+  };
+
   return (
     <>
       <div className="flex gap-4 items-center mb-2">
@@ -36,7 +43,9 @@ export default function Task({ _id, title, dueDate, priority, status }) {
             <Square className="text-gray-500" />
           )}
         </span>
-        <p className="basis-1/3 cursor-pointer">{title}</p>
+        <p className="basis-1/3 cursor-pointer" onClick={handleTitleClick}>
+          {title}
+        </p>
         <Priority id={_id} priority={priority} />
         <p className="basis-1/6 text-center">
           {dueDate ? new Date(dueDate).toLocaleDateString() : "-"}
@@ -56,6 +65,7 @@ export default function Task({ _id, title, dueDate, priority, status }) {
           />
         </div>
       </div>
+      <TaskModel isOpen={taskIsOpen} onClose={() => setTaskIsOpen(false)} />
       <UpdateTaskModel isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>
   );

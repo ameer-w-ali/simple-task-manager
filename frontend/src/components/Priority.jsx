@@ -11,7 +11,7 @@ const priorityStyles = {
 
 export default function Priority({ id, priority }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const priorityClass = priorityStyles[priority] || "hidden";
+  const priorityClass = priorityStyles[priority];
   const dispatch = useDispatch();
 
   const handleToggleDropdown = () => {
